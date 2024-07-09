@@ -1,39 +1,80 @@
 ---
 
 ---
-<nav class="flex justify-between items-center w-[92%] py-4 mx-auto ">
-    <div>
-        <img class="w-100" src="https://www.dentalkrebs.com/imgs/clinica-dental-krebs.webp" alt="">
+<nav class="flex justify-between items-center w-11/12 md:w-4/5 py-4 mx-auto h-20 bg-primary-gray">
+
+    <!-- Logo -->
+    <div class="flex-shrink-0">
+        <img class="w-full" src="https://www.dentalkrebs.com/imgs/clinica-dental-krebs.webp" alt="Clínica Dental Krebs">
     </div>
-    <div class="nav-links md:static absolute bg-while md:min-h-fit min-h-[60vh] left-0 top-[-100%] md:w-auto w-full flex items-center px-5">
-        <ul class="flex md:flex-row flex-col md:items-center md:gap-[4vw] gap-8">
+
+    <!-- Navbar links -->
+    <div id="nav-links" class="z-2 duration-500 md:static absolute bg-while md:min-h-fit min-h-[30vh] left-0 top-[-100%] md:w-auto w-full flex items-center px-5 shadow-md md:shadow-none">
+        <ul class="flex md:flex-row flex-col md:items-center md:gap-4 gap-7 text-base">
             <li>
-                <a class="hover:bg-[#24B89F] rounded-md	p-2" href="">Inicio</a>
+                <a class="hover:bg-secondary-green hover:text-primary-gray transition-all duration-200 ease-in-out rounded-full px-3 py-1" href="">Inicio</a>
             </li>
             <li>
-                <a class="hover:bg-[#24B89F] rounded-md	p-2" href="">Nosotros</a>
+                <a class="hover:bg-secondary-green hover:text-primary-gray transition-all duration-200 ease-in-out rounded-full px-3 py-1" href="">Nosotros</a>
             </li>
             <li>
-                <a class="hover:bg-[#24B89F] rounded-md	p-2" href="">Tratamientos</a>
+                <a class="hover:bg-secondary-green hover:text-primary-gray transition-all duration-200 ease-in-out rounded-full px-3 py-1" href="">Tratamientos</a>
             </li>
             <li>
-                <a class="hover:bg-[#24B89F] rounded-md	p-2" href="">Blog</a>
+                <a class="hover:bg-secondary-green hover:text-primary-gray transition-all duration-200 ease-in-out rounded-full px-3 py-1" href="">Blog</a>
             </li>
         </ul>
     </div>
-    <div class="flex items-center gap-6">
-        <button class="bg-black text-white px-5 py-2 rounded-full hover:bg-[#24B89F]">Contacto</button>
-        <svg onclick="onToggleMenu(this)" class="text-3x1 cursor-pointer md:hidden" data-slot="icon" fill="none" stroke-width="1.5" stroke="currentColor" viewBox="0 0 10" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"></path>
-        </svg>
+
+    <!-- Contact button -->
+    <div class="flex items-center">
+        <button class="bg-secondary-black transition-all duration-200 ease-in-out text-primary-gray px-5 py-2 rounded-full hover:bg-secondary-green hidden md:block">Contacto</button>
+        <div id="menu-container" class="md:hidden">
+            <svg xmlns="http://www.w3.org/2000/svg"
+              width="30"
+              height="30"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="cursor-pointer icon icon-tabler icons-tabler-outline icon-tabler-menu-2">
+            
+              <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+              <path d="M4 6l16 0"></path>
+              <path d="M4 12l16 0"></path>
+              <path d="M4 18l16 0"></path>
+            </svg>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="30"
+              height="30"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="hidden cursor-pointer icon icon-tabler icons-tabler-outline icon-tabler-x">
+              <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+              <path d="M18 6l-12 12M6 6l12 12"></path>
+            </svg>
+        </div>
     </div>
 </nav>
 
-<!--<script>
-import { navigate } from "astro:transitions/client";
-    const links = document.querySelector(".nav-links");
-    function onToggleMenu(e){       
-        e.name= e.name === "menu" ? "close" : "menu";
-        links?.classList.toggle("top-[9%]");
-    }
-</script>--
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const menuContainer = document.getElementById("menu-container");
+      menuContainer!.addEventListener("click", function () {
+        const navLinks = document.getElementById("nav-links");
+        navLinks!.classList.toggle("top-[10%]");
+        const menuIcon = document.querySelector(".icon-tabler-menu-2");
+        const closeIcon = document.querySelector(".icon-tabler-x");
+        menuIcon!.classList.toggle("hidden");
+        closeIcon!.classList.toggle("hidden");
+      });
+    });
+</script>
+  
