@@ -1,11 +1,39 @@
 ---
 
 ---
-
-<nav>
-    <h1 >Hello</h1>
+<nav class="flex justify-between items-center w-[92%] py-4 mx-auto ">
+    <div>
+        <img class="w-100" src="https://www.dentalkrebs.com/imgs/clinica-dental-krebs.webp" alt="">
+    </div>
+    <div class="nav-links md:static absolute bg-while md:min-h-fit min-h-[60vh] left-0 top-[-100%] md:w-auto w-full flex items-center px-5">
+        <ul class="flex md:flex-row flex-col md:items-center md:gap-[4vw] gap-8">
+            <li>
+                <a class="hover:bg-[#24B89F] rounded-md	p-2" href="">Inicio</a>
+            </li>
+            <li>
+                <a class="hover:bg-[#24B89F] rounded-md	p-2" href="">Nosotros</a>
+            </li>
+            <li>
+                <a class="hover:bg-[#24B89F] rounded-md	p-2" href="">Tratamientos</a>
+            </li>
+            <li>
+                <a class="hover:bg-[#24B89F] rounded-md	p-2" href="">Blog</a>
+            </li>
+        </ul>
+    </div>
+    <div class="flex items-center gap-6">
+        <button class="bg-black text-white px-5 py-2 rounded-full hover:bg-[#24B89F]">Contacto</button>
+        <svg onclick="onToggleMenu(this)" class="text-3x1 cursor-pointer md:hidden" data-slot="icon" fill="none" stroke-width="1.5" stroke="currentColor" viewBox="0 0 10" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"></path>
+        </svg>
+    </div>
 </nav>
 
-<style>
-
-</style>
+<!--<script>
+import { navigate } from "astro:transitions/client";
+    const links = document.querySelector(".nav-links");
+    function onToggleMenu(e){       
+        e.name= e.name === "menu" ? "close" : "menu";
+        links?.classList.toggle("top-[9%]");
+    }
+</script>--
