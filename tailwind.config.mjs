@@ -10,6 +10,9 @@ export default {
 				'secondary-black': '#141414',
 				'secondary-bluewhite': '#E8F1F6',
 			},
+			backgroundImage: {
+				'portada': "url('portada-img-krebs.webp')",
+			},
 		},
 	},
 	plugins: [],
